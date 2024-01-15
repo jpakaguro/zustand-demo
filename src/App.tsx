@@ -1,5 +1,9 @@
 import BearBox from "./components/BearBox"
-import CatBox from "./components/catBox"
+// import CatBox2 from "./components/CatBox2"
+// import { CatController } from "./components/CatController"
+// import CatBox from "./components/catBox"
+
+import { FoodBox } from "./components/FoodBox"
 
 function App() {
 
@@ -7,8 +11,11 @@ function App() {
   return (
     <div className='container'>
       <h1>Zustand Course</h1>
+      {/* <CatBox />
+      <CatBox2 />
+      <CatController /> */}
       <BearBox />
-      <CatBox />
+      <FoodBox />
     </div>
   )
 }

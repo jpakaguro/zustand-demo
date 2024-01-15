@@ -1,17 +1,20 @@
-import { useCatStoreImmer } from "../stores/catStoreImmerMiddleware"
+import { useCatStore } from "../stores/catStoreImmerMiddleware"
 
 const CatBox = () => {
-    const {cats, increaseBigCats, increaseSmallCats} = useCatStoreImmer()
-    const {bigCats, smallCats} = cats as { bigCats: number, smallCats: number };
-    
+  const { cats: {bigCats, smallCats, totalCats}, increaseBigCats, increaseSmallCats, summary } = useCatStore()
+
     return (
         <div className="box">
-            <div>
+            
                 <h1>Cats</h1>
-                <span>Big Cats: {bigCats}</span>  <span>Small Cats: {smallCats}</span>
+                <span>Big Cats: {bigCats}</span> <span>Small Cats: {smallCats}</span>
+                <span>Total Cats: {totalCats}</span>
+                <span>{Math.random()}</span>
                 <button onClick={increaseBigCats}>Add Big Cat</button>
                 <button onClick={increaseSmallCats}>Add Small Cat</button>
-            </div>
+                <button onClick={summary}>Summary</button>
+                <div></div>
+
         </div>
     )
 }
